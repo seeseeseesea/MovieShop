@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using MovieShop.Core.ServiceInterfaces;
-using MovieShop.Web.Models;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using MovieShop.Core.Exceptions;
+using MovieShop.Core.ServiceInterfaces;
+using MovieShop.MVC.Infrastructure;
+using MovieShop.MVC.Models;
 
-namespace MovieShop.Web.Controllers
+namespace MovieShop.MVC.Controllers
 {
     public class HomeController : Controller
     {
@@ -21,20 +21,22 @@ namespace MovieShop.Web.Controllers
             _movieService = movieService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            _logger.LogInformation("Index method called");
+            var topGrossingMovies = await _movieService.GetHighestGrossingMovies();
+            return View(topGrossingMovies);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+      
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var errorDetails = HttpContext.Items["ErrorDetails"];
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+              //  ErrorResponseModel = errorDetails
+            });
         }
     }
 }

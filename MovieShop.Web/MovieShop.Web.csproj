@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MiveShop.Core\MiveShop.Core.csproj" />
+    <ProjectReference Include="..\MoiveShop.Core\MoiveShop.Core.csproj" />
     <ProjectReference Include="..\MovieShop.Infrastructure\MovieShop.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using MovieShop.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MovieShop.Infrastructure.Data
 {
@@ -13,6 +10,19 @@ namespace MovieShop.Infrastructure.Data
         {
 
         }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Crew> Crews { get; set; }
+        public DbSet<Cast> Casts { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<MovieGenre> MovieGenres { get; set; }
+        public DbSet<MovieCast> MovieCasts { get; set; }
+        public DbSet<MovieCrew> MovieCrews { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,8 +53,13 @@ namespace MovieShop.Infrastructure.Data
 
         private void ConfigureGenre(EntityTypeBuilder<Genre> builder)
         {
+            // ToTable(table) method is used to define the Table name for Entity Class, in this case we are creating Genre table. Equivalent to the Table attribute
             builder.ToTable("Genre");
+
+            // HasKey(selector) method takes lambda expression that selects the primary key for our Table, in our case we want Id as primary Key. It is similar to [Key] attribute in data annotations.
             builder.HasKey(g => g.Id);
+
+            // Property(selector) is used to describe more details about property or column in our table, like making it not null or restricting the maximum length etc and many more.
             builder.Property(g => g.Name).IsRequired().HasMaxLength(64);
         }
         private void ConfigureMovie(EntityTypeBuilder<Movie> builder)
@@ -158,19 +173,5 @@ namespace MovieShop.Infrastructure.Data
             builder.Property(r => r.ReviewText).HasMaxLength(20000);
             builder.Property(r => r.Rating).HasColumnType("decimal(3, 2)");
         }
-
-        public DbSet<Genre> Genres { get; set; }
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<Crew> Crews { get; set; }
-        public DbSet<Cast> Casts { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<MovieGenre> MovieGenres { get; set; }
-        public DbSet<MovieCast> MovieCasts { get; set; }
-        public DbSet<MovieCrew> MovieCrews { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
-        public DbSet<Purchase> Purchases { get; set; }
-        public DbSet<Favorite> Favorites { get; set; }
-        public DbSet<Review> Reviews { get; set; }
     }
 }

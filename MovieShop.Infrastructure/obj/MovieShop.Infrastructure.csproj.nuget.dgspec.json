@@ -4,14 +4,14 @@
     "C:\\Repos\\MovieShop\\MovieShop.Infrastructure\\MovieShop.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\MovieShop\\MiveShop.Core\\MiveShop.Core.csproj": {
+    "C:\\Repos\\MovieShop\\MoiveShop.Core\\MoiveShop.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\MovieShop\\MiveShop.Core\\MiveShop.Core.csproj",
-        "projectName": "MiveShop.Core",
-        "projectPath": "C:\\Repos\\MovieShop\\MiveShop.Core\\MiveShop.Core.csproj",
+        "projectUniqueName": "C:\\Repos\\MovieShop\\MoiveShop.Core\\MoiveShop.Core.csproj",
+        "projectName": "MoiveShop.Core",
+        "projectPath": "C:\\Repos\\MovieShop\\MoiveShop.Core\\MoiveShop.Core.csproj",
         "packagesPath": "C:\\Users\\seese\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\MovieShop\\MiveShop.Core\\obj\\",
+        "outputPath": "C:\\Repos\\MovieShop\\MoiveShop.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\seese\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,24 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -82,8 +100,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Repos\\MovieShop\\MiveShop.Core\\MiveShop.Core.csproj": {
-                "projectPath": "C:\\Repos\\MovieShop\\MiveShop.Core\\MiveShop.Core.csproj"
+              "C:\\Repos\\MovieShop\\MoiveShop.Core\\MoiveShop.Core.csproj": {
+                "projectPath": "C:\\Repos\\MovieShop\\MoiveShop.Core\\MoiveShop.Core.csproj"
               }
             }
           }
@@ -98,6 +116,22 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
+            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0, )"

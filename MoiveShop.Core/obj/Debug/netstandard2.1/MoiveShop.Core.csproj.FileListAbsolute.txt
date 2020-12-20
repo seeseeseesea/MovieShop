@@ -1,0 +1,9 @@
+C:\Repos\MovieShop\MoiveShop.Core\bin\Debug\netstandard2.1\MoiveShop.Core.deps.json
+C:\Repos\MovieShop\MoiveShop.Core\bin\Debug\netstandard2.1\MoiveShop.Core.dll
+C:\Repos\MovieShop\MoiveShop.Core\bin\Debug\netstandard2.1\MoiveShop.Core.pdb
+C:\Repos\MovieShop\MoiveShop.Core\obj\Debug\netstandard2.1\MoiveShop.Core.AssemblyInfoInputs.cache
+C:\Repos\MovieShop\MoiveShop.Core\obj\Debug\netstandard2.1\MoiveShop.Core.AssemblyInfo.cs
+C:\Repos\MovieShop\MoiveShop.Core\obj\Debug\netstandard2.1\MoiveShop.Core.csproj.CoreCompileInputs.cache
+C:\Repos\MovieShop\MoiveShop.Core\obj\Debug\netstandard2.1\MoiveShop.Core.dll
+C:\Repos\MovieShop\MoiveShop.Core\obj\Debug\netstandard2.1\MoiveShop.Core.pdb
+C:\Repos\MovieShop\MoiveShop.Core\obj\Debug\netstandard2.1\MoiveShop.Core.csprojAssemblyReference.cache

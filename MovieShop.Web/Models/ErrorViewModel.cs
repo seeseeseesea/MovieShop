@@ -1,11 +1,11 @@
-using System;
+using MovieShop.Core.Exceptions;
 
-namespace MovieShop.Web.Models
+namespace MovieShop.MVC.Models
 {
     public class ErrorViewModel
     {
         public string RequestId { get; set; }
-
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public ErrorResponseModel ErrorResponseModel { get; set; }
     }
 }
